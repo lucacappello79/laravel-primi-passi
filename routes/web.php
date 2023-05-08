@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/home', function () {
 
 
@@ -39,18 +39,40 @@ Route::get('/home', function () {
 
     return view('home', $data);
 })->name('home');
+*/
 
-/*Route::get('/page2', function () {
+Route::get('/home', function () {
 
-
-    $data = [
-        "greetings" => " Привет, ",
-        "planet" => "мир!"
+    $data1 = [
+        "greetings" => "Hello, ",
+        "planet" => "World!"
     ];
 
-    return view('page2', $data);
-})->name('page2');
-*/
+    $data2 = [
+        'Hello, world',
+        'Привет, мир!',
+        '你好, 世界',
+        'Halo, dunia',
+        'Olá, mundo!'
+    ];
+
+    $links = [
+        ['title' => 'Page 2', 'route' => 'page2'],
+        ['title' => 'Page 3', 'route' => 'page3'],
+        ['title' => 'Page 4', 'route' => 'page4'],
+        ['title' => 'Page 5', 'route' => 'page5'],
+    ];
+
+    $data = [
+        'greetings' => $data1['greetings'],
+        'planet' => $data1['planet'],
+        'data2' => $data2,
+        'links' => $links
+    ];
+
+    return view('home', $data);
+})->name('home');
+
 
 Route::get('/page2', function () {
 
@@ -60,9 +82,8 @@ Route::get('/page2', function () {
     return view('page2', compact('greetings', 'planet'));
 })->name('page2');
 
-/*
-Route::get('/page3', function () {
 
+Route::get('/page3', function () {
 
     $data = [
         "greetings" => " 你好, ",
@@ -71,26 +92,9 @@ Route::get('/page3', function () {
 
     return view('page3', $data);
 })->name('page3');
-*/
-
-Route::get('/page3', function () {
-
-
-    $data = [
-        "greetings" => " 你好, ",
-        "planet" => " 世界！"
-    ];
-
-    return view('page3', $data);
-})->name('page3');
-
-
-
-
 
 
 Route::get('/page4', function () {
-
 
     $data = [
         "greetings" => "Halo, ",
@@ -100,8 +104,8 @@ Route::get('/page4', function () {
     return view('page4', $data);
 })->name('page4');
 
-Route::get('/page5', function () {
 
+Route::get('/page5', function () {
 
     $data = [
         "greetings" => "Olá, ",
