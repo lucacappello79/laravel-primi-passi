@@ -24,7 +24,7 @@ Route::get('/home', function () {
     return view('home', $data);
 })->name('home');
 
-Route::get('/page2', function () {
+/*Route::get('/page2', function () {
 
 
     $data = [
@@ -33,6 +33,15 @@ Route::get('/page2', function () {
     ];
 
     return view('page2', $data);
+})->name('page2');
+*/
+
+Route::get('/page2', function () {
+
+    $greetings = "Привет, ";
+    $planet = "мир!";
+
+    return view('page2', compact('greetings', 'planet'));
 })->name('page2');
 
 
