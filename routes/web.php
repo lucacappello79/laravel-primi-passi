@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('homeSweetHome');
 });
+
+Route::get('/home', function () {
+
+
+    $data = [
+        "greetings" => "Hello",
+        "planet" => "World"
+
+    ];
+
+    return view('homeSweetHome', $data);
+});
