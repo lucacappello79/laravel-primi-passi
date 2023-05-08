@@ -1,0 +1,23 @@
+.ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ul li {
+    margin-right: 1em;
+}
+
+.ul a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    background-color: #eee;
+    transition: all 0.2s ease;
+}
+
+.ul a:hover {
+    background-color: #ccc;
+}

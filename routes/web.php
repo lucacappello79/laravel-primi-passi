@@ -16,9 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
 
 
-    $data = [
+    $data1 = [
         "greetings" => "Hello, ",
         "planet" => "World!"
+    ];
+
+    $data2 = [
+        'Hello, world',
+        'Привет, мир!',
+        '你好, 世界',
+        'Halo, dunia',
+        'Olá, mundo!'
+    ];
+
+    // $data = array_merge($data1, $data2);
+
+    $data = [
+        'greetings' => $data1['greetings'],
+        'planet' => $data1['planet'],
+        'data2' => $data2
     ];
 
     return view('home', $data);
@@ -44,6 +60,18 @@ Route::get('/page2', function () {
     return view('page2', compact('greetings', 'planet'));
 })->name('page2');
 
+/*
+Route::get('/page3', function () {
+
+
+    $data = [
+        "greetings" => " 你好, ",
+        "planet" => " 世界！"
+    ];
+
+    return view('page3', $data);
+})->name('page3');
+*/
 
 Route::get('/page3', function () {
 
@@ -55,6 +83,11 @@ Route::get('/page3', function () {
 
     return view('page3', $data);
 })->name('page3');
+
+
+
+
+
 
 Route::get('/page4', function () {
 
