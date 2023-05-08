@@ -22,7 +22,7 @@ Route::get('/home', function () {
     ];
 
     return view('home', $data);
-});
+})->name('home');
 
 Route::get('/page2', function () {
 
@@ -33,7 +33,7 @@ Route::get('/page2', function () {
     ];
 
     return view('page2', $data);
-});
+})->name('page2');
 
 
 Route::get('/page3', function () {
@@ -45,7 +45,7 @@ Route::get('/page3', function () {
     ];
 
     return view('page3', $data);
-});
+})->name('page3');
 
 Route::get('/page4', function () {
 
@@ -56,7 +56,7 @@ Route::get('/page4', function () {
     ];
 
     return view('page4', $data);
-});
+})->name('page4');
 
 Route::get('/page5', function () {
 
@@ -67,4 +67,4 @@ Route::get('/page5', function () {
     ];
 
     return view('page5', $data);
-});
+})->name('page5');
